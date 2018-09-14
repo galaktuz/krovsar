@@ -1,0 +1,110 @@
+* {
+    font-family: $OpenSans;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+// main {
+//     max-width: 1024px;
+//     margin: auto;
+// }
+
+header,
+main,
+footer {
+    overflow: hidden;
+}
+
+* {
+    // outline: 1px dashed goldenrod;
+    outline: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+// Убираем стилизацию браузеров на webkit
+select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+}
+
+// Убираем внешние отступы и пэдинги для блоков
+// .row {
+//     margin: 0 auto;
+//     [class*="col-"] {
+//         padding-left: 0 !important;
+//         padding-right: 0 !important;
+//     }
+//     &.column {
+//         flex-direction: column;
+//     }
+// }
+
+// Незаполненные поля
+.invalid:not(form) {
+    border: 1px solid rgba(246, 60, 62, 1) !important;
+}
+
+// Ограничиваем максимальную ширину для данного проекта
+// .container {
+//     margin: 0 auto;
+//     max-width: 61rem;
+// }
+
+.btn-state {
+    &:hover {
+        background-color: rgba(246, 60, 62, 1);
+    }
+    &:active {
+        background-color: rgba(255, 78, 80, 1);
+    }
+}
+
+/* Убираем желтый фон при автозаполнении */
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+// Placeholder'ы
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #0D0D0D;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #0D0D0D;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #0D0D0D;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #0D0D0D;
+}
+
+//custom , hide arrow select element for IE
+select::-ms-expand {
+    display: none;
+}

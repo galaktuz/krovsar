@@ -1,0 +1,10 @@
+{
+    "name": "",
+    "version": "0.1.0",
+    "default_locale": "ru",
+    "description": "",
+    "background_color": "#FDF5E7",
+    "theme_color": "#c64841",
+    "display": "standalone",
+    "gcm_sender_id": "103953800507"
+}

@@ -1,0 +1,97 @@
+- function makeHash() {
+-    var text = "";
+-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+-
+-    for( var i=0; i < 10; i++ ){
+-        text += possible.charAt(Math.floor(Math.random() * possible.length));
+-    }
+-    return text;
+- }
+
+- var css = 'css/main.css';
+- var js = process.env.NODE_ENV == 'production' ? 'js/app.js?' + makeHash() : 'js/app.js';
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    title
+    link(rel="manifest" href="manifest.json")
+    //- Шрифты. При подключении через link, глюки со шрифтами пропали
+    //- link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700&amp;subset=cyrillic-ext" rel="stylesheet")
+    link(rel="icon" href="favicon.png" type="image/x-icon")
+    link(rel="shortcut icon" href="favicon.png" type="image/x-icon")
+    link(rel='stylesheet', href=css)
+  body
+    script.
+        let arrCookie = document.cookie.split('; ');
+        if(arrCookie.indexOf('category-selected=true') != -1) {
+            document.location = 'alreadydone.html';
+        }
+    header
+        .container
+            img.logo(src="images/logo_halva.svg", alt="Логотип Халва")
+    main
+        .container.form
+            .no-gutters.row
+                h1 Выберите “Любимую категорию” по Вашей карте ХАЛВА!
+                p Получите 10 мес. рассрочки на все покупки в ближайшие выходные!
+            form(action="").no-gutters.row.flex-column.align-items-center.flex-md-row.align-items-md-start
+                select#categories(name="categories", onchange="selectCategory(this)")
+                    option(value="", selected, disabled) Выберите категорию
+                    include includes/categories.html
+                input(type="email", placeholder="Ваша почта") 
+                .wrap-submit
+                    button.submit.btn-state Выбрать
+        .container.success
+            .no-gutters.row.flex-column
+                h2 Благодарим за ваш выбор!
+                p <b class="holidays">1,2,7,8</b> августа для Вас подключены 10 мес. рассрочки на покупки в категории!
+                ul
+                    li.station АЗС
+                    li.select-category Кафе и рестораны
+                p Список партнеров и спец. предложений смотрите на сайте
+                a.btn-partners.btn-state(href="https://halvacard.ru/shops/actions", target="_blank") Перейти
+    footer
+        .container
+            .no-gutters.row
+                .col-12.col-lg-3.social.order-lg-last.align-items-md-center
+                    ul
+                        li
+                            a(href="#")
+                                img(src="images/insta_white.svg", alt="Канал в инстаграмм")
+                        li
+                            a(href="#")
+                                img(src="images/fb_white.svg", alt="Страница в фейсбуке")
+                        li
+                            a(href="#")
+                                img(src="images/vk_white.svg", alt="Группа вконтакте")
+                .col-12.col-lg-9.legal
+                    p © 2018, ПАО «Совкомбанк». Генеральная лицензия Банка России №963 от 5 декабря 2014 года
+    script.
+        // Вызывается при изменении селекта
+        function selectCategory(select) {
+            var liElem = document.querySelector('li.select-category');
+            var svgName = select.value, category = '', contentUrl = 'url(images/' + svgName + '.svg';
+            var preusoArr = select.querySelectorAll('option');
+            [].forEach.call(preusoArr, (elem) => { if(elem.selected) category = elem.textContent;});
+            liElem.style.backgroundImage = contentUrl;
+            liElem.textContent = category;
+        }
+        // Получение ближайших выходных - https://javascript.ru/forum/dom-window/56056-kak-poluchit-blizhajjshijj-vykhodnojj-den.html#post372742
+        var data, holiday = [];
+        data = new Date();
+        data.setDate(data.getDate()+6 - data.getDay());
+        holiday.push(data.getDate());
+        data = new Date();
+        data.setDate(data.getDate()+7 - data.getDay());
+        holiday.push(data.getDate());
+        data = new Date();
+        data.setDate(data.getDate()+13 - data.getDay());
+        holiday.push(data.getDate());
+        data = new Date();
+        data.setDate(data.getDate()+14 - data.getDay());
+        holiday.push(data.getDate());
+        document.querySelector('.holidays').textContent = holiday.join();
+    script(type='text/javascript', src=js)

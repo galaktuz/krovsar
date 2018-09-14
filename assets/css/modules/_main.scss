@@ -1,0 +1,343 @@
+body {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3e3c2+0,fdf5e7+100 */
+    background: #f3e3c2;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #f3e3c2 0%, #fdf5e7 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #f3e3c2 0%, #fdf5e7 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #f3e3c2 0%, #fdf5e7 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e3c2', endColorstr='#fdf5e7', GradientType=1);
+    /* IE6-9 */
+    @include media-breakpoint-up(md) {
+        background: url(../images/kofe-without-bg.png) no-repeat, linear-gradient(to right, #f3e3c2 0%, #fdf5e7 100%);
+        // background-size: contain;
+        background-position: 0 0;
+    }
+    @include media-breakpoint-up(lg) {
+        background: url(../images/kofe.png) no-repeat, linear-gradient(to right, #f3e3c2 0%, #fdf5e7 100%);
+        background-size: contain;
+        background-position: 0 0;
+    }
+}
+
+header {
+    flex: 0 0 auto;
+    .logo {
+        height: 34px;
+        width: 98px;
+        margin-top: 20px;
+        @include media-breakpoint-up(md) {
+            margin-top: 27px;
+            height: 43px;
+            width: 124px;
+        }
+    }
+}
+
+main {
+    flex: 1 0 auto;
+    background: url(../images/card-mobile.png) no-repeat;
+    background-position: left 100% bottom -30px;
+    @include media-breakpoint-up(md) {
+        background: url(../images/card-tablet-plus.png) no-repeat;
+        background-position: left 50% bottom -55px;
+    }
+    @include media-breakpoint-up(lg) {
+        background: url(../images/card-tablet.png) no-repeat;
+        background-position: right 54px bottom 117px;
+    }
+    width: 100%;
+    .promo-alreadydone {
+        @include media-breakpoint-up(lg) {
+            padding-left: 80px;
+            // position: relative;
+            // &::before {
+            //     content: url(../images/check.svg);
+            //     position: absolute;
+            //     left: 0;
+            //     top: 0;
+            //     width: 48px;
+            //     height: 48px;
+            // }
+        }
+    }
+    h1 {
+        font-family: $OpenSans;
+        font-size: 24px;
+        font-weight: bold;
+        color: rgba(125, 18, 13, 1);
+        line-height: 33px;
+        margin-top: 56px;
+        @include media-breakpoint-up(md) {
+            font-size: 28px;
+            line-height: 38px;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: 35px;
+            line-height: 43px;
+            &.alreadydone {
+                margin-top: 60px;
+                position: relative;
+                &::before {
+                    content: url(../images/check.svg);
+                    position: absolute;
+                    left: -80px;
+                    top: 0;
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+            
+        }
+    }
+    p {
+        font-family: $OpenSans;
+        font-size: 18px;
+        color: rgba(125, 18, 13, 1);
+        line-height: 24px;
+        margin-top: 14px;
+        margin-bottom: 34px;
+        @include media-breakpoint-up(md) {
+            font-size: 24px;
+            line-height: 34px;
+            margin-bottom: 55px;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: 26px;
+            line-height: 33px;
+        }
+        &.alreadydone {
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 35px;
+            }
+        }
+    }
+    select {
+        cursor: pointer;
+        font-family: $OpenSans;
+        font-size: 11px;
+        color: #0D0D0D;
+        padding: 0 40px 0 23px;
+        height: 44px;
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid rgba(255, 182, 50, 1);
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 22px;
+        background-color: transparent;
+        margin-bottom: 18px;
+        background: url(../images/select_arrow.svg) no-repeat;
+        background-position: right 21px top 21px;
+        @include media-breakpoint-up(md) {
+            height: 50px;
+            border-radius: 25px;
+            font-size: 14px;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+            width: 282px;
+            margin-right: 18px;
+        }
+    }
+    input {
+        font-family: $OpenSans;
+        font-size: 11px;
+        color: #0D0D0D;
+        padding: 0 23px;
+        height: 44px;
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid rgba(255, 182, 50, 1);
+        border-radius: 22px;
+        background-color: transparent;
+        @include media-breakpoint-up(md) {
+            height: 50px;
+            border-radius: 25px;
+            font-size: 14px;
+        }
+        @include media-breakpoint-up(lg) {
+            // dfsdf
+            width: 282px;
+            margin-right: 28px;
+        }
+    }
+    .wrap-submit {
+        width: 100%;
+        text-align: center;
+        @include media-breakpoint-up(lg) {
+            width: auto;
+        }
+    }
+    .submit, .btn-alreadydone, .btn-partners {
+        outline: none;
+        cursor: pointer;
+        margin-top: 24px;
+        height: 44px;
+        width: 100%;
+        max-width: 400px;
+        
+        background-color: rgba(255, 119, 121, 1);
+        box-shadow: 0px 6px 9px 0px rgba(222, 55, 0, 0.27);
+        border-style: none;
+        border-radius: 22px;
+        font-family: $OpenSans;
+        font-weight: bold;
+        font-size: 12px;
+        color: white;
+        @include media-breakpoint-up(md) {
+            margin-top: 38px;
+            width: 100%;
+            height: 50px;
+            border-radius: 25px;
+            // max-width: 354px;
+            font-size: 16px;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 173px;
+            margin-top: 0;
+        }
+    }
+    .wrap-btn {
+        width: 100%;
+        text-align: center;
+        @include media-breakpoint-up(lg) {
+            text-align: left;
+        }
+    }
+    .btn-alreadydone {
+        background-color: rgba(255, 78, 80, 1);
+        display: inline-block;
+        line-height: 44px;
+        text-align: center;
+        margin-top: 0;
+        &:hover {
+            text-decoration: none;
+        }
+        &::before {
+            content: 'Смотреть партнеров';
+            @include media-breakpoint-up(md) {
+                content: 'Посмотреть весь список партнеров';
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            max-width: 100%;
+            width: 401px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+    }
+    // Экран успеха
+    .form {
+        // display: none;
+    }
+    .success {
+        display: none;
+        h2 {
+            font-family: $OpenSans;
+            font-size: 24px;
+            font-weight: bold;
+            color: rgba(125, 18, 13, 1);
+            line-height: 33px;
+            margin-top: 56px;
+            @include media-breakpoint-up(md) {
+                font-size: 28px;
+                line-height: 38px;
+            }
+            @include media-breakpoint-up(lg) {
+                font-size: 35px;
+                line-height: 43px;
+            }
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            
+            @include media-breakpoint-up(md) {
+                flex-direction: row;
+            }
+            @include media-breakpoint-up(lg) {
+                margin-left: 46px;
+            }
+            li {
+                font-family: $OpenSans;
+                font-size: 20px;
+                color: rgba(125, 18, 13, 1);
+                padding-left: 80px;
+                min-height: 64px;
+                box-sizing: content-box;
+                position: relative;
+                display: flex;
+                align-items: center;
+                &:last-child {
+                    margin-top: 20px;
+                    @include media-breakpoint-up(md) {
+                        margin-top: 0;
+                        margin-left: 30px;
+                    }
+                }
+                &.station {
+                    background-image: url(../images/station.svg);
+                    background-position: 0 50%;
+                    background-size: 64px 64px;
+                    background-repeat: no-repeat;
+                }
+                &.select-category {
+                    background-image: url(../images/cup.svg);
+                    background-position: 0 50%;
+                    background-size: 64px 64px;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+        .btn-partners {
+            background-color: rgba(255, 78, 80, 1);
+            text-decoration: none;
+            text-align: center;
+            line-height: 44px;
+            @include media-breakpoint-up(md) {
+                line-height: 50px;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: rgba(198, 72, 66, 1);
+    flex: 0 0 auto;
+    padding: 20px 0;
+    .social {
+        padding-bottom: 24px;
+        @include media-breakpoint-up(md) {
+            padding: 0;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            li {
+                margin-right: 18px;
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .legal {
+        p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+            line-height: 20px;
+            font-family: $OpenSans;
+            margin-bottom: 15px;
+            @include media-breakpoint-up(md) {
+                line-height: 32px;
+                margin: 0;
+            }
+        }
+    }
+}
